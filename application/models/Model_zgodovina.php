@@ -33,11 +33,11 @@ class Model_zgodovina extends CI_Model {
             $row = mysql_fetch_assoc($result);
             $row1 = mysql_fetch_assoc($result1);
             $row2 = mysql_fetch_assoc($result2);
-            //print_r ($row);
+           // print_r ($row);
             //print_r ($row1);
             //print_r ($row2);
             //echo "<br>";
-            #echo $row['mesec'];
+            //echo $row['mesec'];
             #array_push($seznam1['podatki'],array($row['kolicina'],intval($row['mesec'])));
             array_push($seznam1['podatki'],[$row['kolicina'],$row1['mesec'],$row2['vrstavode']]);
             $podatki[] = $row['kolicina'];
@@ -182,31 +182,31 @@ class Model_zgodovina extends CI_Model {
             
             if($seznam1['podatki'][$z][1]=='avgust' and $seznam1['podatki'][$z][2] == "topla"){
                 //echo "ustaul9 <br>";
-                $mescit["avg"]=$mescih["avg"]+$seznam1['podatki'][$z][0];
+                $mescit["avg"]=$mescit["avg"]+$seznam1['podatki'][$z][0];
                 
             }
             if($seznam1['podatki'][$z][1]=='september' and $seznam1['podatki'][$z][2] == "topla"){
                 //echo "ustaul10 <br>";
-                $mescit["sep"]=$mescih["sep"]+$seznam1['podatki'][$z][0];
+                $mescit["sep"]=$mescit["sep"]+$seznam1['podatki'][$z][0];
                 
             }
             
             
             if($seznam1['podatki'][$z][1]=='oktober' and $seznam1['podatki'][$z][2] == "topla"){
                // echo "ustaul11 <br>";
-                $mescit["okt"]=$mescih["okt"]+$seznam1['podatki'][$z][0];
+                $mescit["okt"]=$mescit["okt"]+$seznam1['podatki'][$z][0];
                 
             }
             
             if($seznam1['podatki'][$z][1]=='november' and $seznam1['podatki'][$z][2] == "topla"){
                 //echo "ustaul12 <br>";
-                $mescit["nov"]=$mescih["nov"]+$seznam1['podatki'][$z][0];
+                $mescit["nov"]=$mescit["nov"]+$seznam1['podatki'][$z][0];
                 
             }
             
             if($seznam1['podatki'][$z][1]=='december' and $seznam1['podatki'][$z][2] == "topla"){
                 //echo "ustaul <br>";
-                $mescit["dec"]=$mescih["dec"]+$seznam1['podatki'][$z][0];
+                $mescit["dec"]=$mescit["dec"]+$seznam1['podatki'][$z][0];
                 
             }
             
