@@ -68,10 +68,7 @@
             
             color:white;
         }
-        .login{
-            text-align: center;
-            padding-top: 1%;
-        }
+    
     
     
     </style>
@@ -81,51 +78,36 @@
      <div class="row test">
          <div class="col-xl-1"></div>
         <div class="col-xl-3 ime"><p>Poraba vode</p></div>
-         <div class="col-xl-3">
-            <?php
-             echo '<a href="' .base_url().'index.php/registracija">Registracija</a>';
-             
-             ?>
-             
-         </div>
-        
+        <div class="col-xl-3"><a href="
+            <?php echo base_url(); 
+            
+            ?>index.php">Dodajanje uporabnikov</a></div>
+       
+         <div class="col-xl-1"><a href="
+            <?php echo base_url(); 
+             ?>index.php/brisanje/naloz">Brisanje uproabnikov</a></div>
+         
+         <div class="col-xl-1"><a href="
+            <?php echo base_url(); 
+             ?>index.php/spremeni/naloz">Brisanje uproabnikov</a></div>
      
     </div>
    
     
     
      <div class="row">
-         <div class="col-xl-4"></div>
-        <div class="col-xl-4 login">
-       
-
-            <?php
-            #codeigniter forms
-            echo form_open('prijava/vstop', array('method'=>'get')); #<form action="https.../prijava/vstop.php" method="post">
-            echo "Ime: ".form_input('uporabnik','');
-            echo "<br>";
-            echo "Geslo: ".form_input('geslo','');
-            echo "<br>";
-            echo "<br>";
-            echo form_submit('poslji','poslji!');
-
+        <div class="col-xl-4">
+         <?php
+            #echo '<a href="' .base_url().'index.php/prijava/vstop/test">registracija</a>';
             
-
-
             ?>
          
          </div>
-        
-     
-    </div>
-    
-    <div class="row">
-    <div class="col-xl-3"></div>
-    <div class="col-xl-4  ">
+        <div class="col-xl-4  ">
             
             <img class="logo" src="../../img/logo.PNG">
          </div>
-    
+     
     </div>
    
         
@@ -135,4 +117,5 @@
         
         
     </div>
-<img src="<?php echo base_url(); ?>img/logotip.png"> 
+</body>
+</html>

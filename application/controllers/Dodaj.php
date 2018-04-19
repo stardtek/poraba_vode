@@ -25,8 +25,9 @@ class Dodaj extends CI_Controller {
         $rezultat=$this->Model_dodaj->neki($_POST['mesec'],$_POST['vrsta'] ,$_POST['st']);
         #echo $rezultat;
         echo "<script type='text/javascript'>alert('Uspešen vnos!')</script>";
-        
+        $this->naloz();
         $this->load->view('dodaj');
+        
         
         
     }
