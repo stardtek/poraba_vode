@@ -81,8 +81,8 @@
 
 <div class="container main">
      <div class="row test">
-         <div class="col-xl-1"></div>
-        <div class="col-xl-3 ime"><p>Poraba vode</p></div>
+         
+        <div class="col-xl-2 ime"><p>Poraba vode</p></div>
      
        
          <div class="col-xl-2"><a href="
@@ -94,6 +94,10 @@
          <div class="col-xl-2"><a href="
             <?php echo base_url(); 
              ?>index.php/">Dodajanje uporabnikov</a></div>
+         
+         <div class="col-xl-2"><a href="
+            <?php echo base_url(); 
+             ?>index.php/povp/naloz">Povprečna poraba</a></div>
      
     </div>
    
@@ -105,9 +109,9 @@
             echo form_open('povp/povpr'); #<form action="https.../prijava/vstop.php" method="post">
             
             
-            echo ' <select name="izbrisan">';
+            echo ' <select name="naslov">';
                 for($i=0;$i<count($podatki);$i++){
-                    echo ($podatki[$i]);
+                    //echo ($podatki[$i]);
                     
            echo' <option value="'.$podatki[$i].'">'.$podatki[$i].'</option>';
                     

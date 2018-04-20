@@ -15,19 +15,32 @@ class Povp extends CI_Controller {
         
     }
     public function povpr(){
-        $var = $_POST['izbrisan'];
-        
+        $var = $_POST['naslov'];
+        $this->load->model('Model_povp');
         //echo $var;
         
         $this->load->database();#povezemo na bazo
-        $niz = 'UPDATE `uporabniki` SET `vrstauporabnika`="'.$var1.'" WHERE `ime` like "'.$var.'"';
+       $result = mysql_query('SELECT DISTINCT ime FROM test.uporabniki where naslov like "'.$var.'"');
         #echo $niz;
         
-        $query=$this->db->query($niz);
-        echo "<script type='text/javascript'>alert('Uspešeno spremenjena vrsta!!')</script>";
+        $sez=array();
+        for ($x = 0; $x < mysql_num_rows($result); $x++){ 
+            $row = mysql_fetch_assoc($result);
+            array_push($sez,$row['ime']);
+         //   echo $row['ime'];
+           // echo "<br>";
+        }
+       // print_r($sez);
+        
+        $rezultat=$this->Model_povp->usee($sez);
+        //$row = mysql_fetch_assoc($result);
+    //   print_r ($row['ime']);
+    //  $row = mysql_fetch_assoc($result);
+       // print_r ($row['ime']);
+        //echo "<script type='text/javascript'>alert('Uspešeno spremenjena vrsta!!')</script>";
         
       
-        $this->naloz();
+        $this->load->view('graf',$rezultat);
         
     }
     

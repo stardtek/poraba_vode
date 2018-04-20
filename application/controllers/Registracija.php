@@ -9,6 +9,12 @@ class Registracija extends CI_Controller {
         
 		$this->load->view('registracija'); 
 	}
+    
+    public function indexreg()
+	{
+        
+		$this->load->view('registracija'); 
+	}
     public function registriraj()
 	{
        

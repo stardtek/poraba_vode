@@ -78,19 +78,19 @@
      <div class="row test">
          <div class="col-xl-1"></div>
         <div class="col-xl-3 ime"><p>Poraba vode</p></div>
-        <div class="col-xl-3"><a href="
-            <?php echo base_url(); 
-            
-            ?>index.php">Dodajanje uporabnikov</a></div>
        
-         <div class="col-xl-1"><a href="
+         <div class="col-xl-2"><a href="
             <?php echo base_url(); 
              ?>index.php/brisanje/naloz">Brisanje uproabnikov</a></div>
          
-         <div class="col-xl-1"><a href="
+         <div class="col-xl-2"><a href="
             <?php echo base_url(); 
-             ?>index.php/spremeni/naloz">Brisanje uproabnikov</a></div>
+             ?>index.php/spremeni/naloz">Spreminjanje uporabnikov</a></div>
      
+        <div class="col-xl-3"><a href="
+            <?php echo base_url(); 
+            
+            ?>index.php/registracija/indexreg">Dodajanje uporabnikov</a></div>
     </div>
    
     

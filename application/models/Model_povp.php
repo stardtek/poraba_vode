@@ -4,15 +4,19 @@ class Model_povp extends CI_Model {
 
 
 	
-    public function usee()
+    public function usee($ime)
 	{
         
         $this->load->database();#povezemo na bazo
+        $mescih=array("jan"=>0,"feb"=>0,"mar"=>0,"apr"=>0,"maj"=>0,"jun"=>0,"jul"=>0,"avg"=>0,"sep"=>0,"okt"=>0,"nov"=>0,"dec"=>0);
+        $mescit=array("jan"=>0,"feb"=>0,"mar"=>0,"apr"=>0,"maj"=>0,"jun"=>0,"jul"=>0,"avg"=>0,"sep"=>0,"okt"=>0,"nov"=>0,"dec"=>0);
+        foreach ($ime as $im){
+        //echo $im;
       
-        $result = mysql_query("SELECT * FROM test.voda where iduporabnika =  '".$_SESSION['uporabnik']."'");
+        $result = mysql_query("SELECT * FROM test.voda where iduporabnika =  '".$im."'");
         $row = mysql_fetch_assoc($result);
-        $result1 = mysql_query("SELECT * FROM test.mesec where idvoda ='".$_SESSION['uporabnik']."'");
-        $result2 = mysql_query("SELECT * FROM test.vrstavode where idvoda ='".$_SESSION['uporabnik']."'");
+        $result1 = mysql_query("SELECT * FROM test.mesec where idvoda ='".$im."'");
+        $result2 = mysql_query("SELECT * FROM test.vrstavode where idvoda ='".$im."'");
         
         #echo mysql_result($result, 9); // outputs third employee's name
         #echo $result;
@@ -31,15 +35,13 @@ class Model_povp extends CI_Model {
             #array_push($seznam1['podatki'],array($row['kolicina'],intval($row['mesec'])));
             array_push($seznam1['podatki'],[$row['kolicina'],$row1['mesec'],$row2['vrstavode']]);
             $podatki[] = $row['kolicina'];
-            #echo $row['iduporabnika']; 
-            #echo "<br>";
+           
         }
+       
         #echo count($seznam1['podatki']);
         #print_r($seznam1);
         #print_r ($seznam1['podatki']);
         //echo "<br>";
-        $mescih=array("jan"=>0,"feb"=>0,"mar"=>0,"apr"=>0,"maj"=>0,"jun"=>0,"jul"=>0,"avg"=>0,"sep"=>0,"okt"=>0,"nov"=>0,"dec"=>0);
-        $mescit=array("jan"=>0,"feb"=>0,"mar"=>0,"apr"=>0,"maj"=>0,"jun"=>0,"jul"=>0,"avg"=>0,"sep"=>0,"okt"=>0,"nov"=>0,"dec"=>0);
         for ($z = 0; $z<count($seznam1['podatki']);$z++){
             #echo $z;
             if($seznam1['podatki'][$z][1]=='januar' and $seznam1['podatki'][$z][2] == "hladna"){
@@ -209,9 +211,10 @@ class Model_povp extends CI_Model {
         //print_r($mescit);
         //echo "<br>";
         $tabelaData['podatki']=[$mescih,$mescit]; 
+        //echo "<br>";
+        //print_r ($tabelaData);
         
-        
-        
+}
         
        
         #var_dump($result['kolicina']);
